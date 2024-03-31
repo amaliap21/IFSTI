@@ -1,0 +1,2 @@
+# IFSTI
+Hackathon FINDIT 2024
