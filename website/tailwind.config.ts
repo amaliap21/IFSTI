@@ -20,9 +20,11 @@ const config = {
     },
     extend: {
       fontFamily: {
-        sans: ["var(--font-sans)", ...fontFamily.sans],
+        outfit: ["var(--font-outfit)"],
       },
       colors: {
+        "custom-black": "#040F0F",
+        "custom-green": "#248232",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
