@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import React from "react";
 
 const Hero = () => {
@@ -23,12 +23,12 @@ const Hero = () => {
         <h1 className="text-6xl md:text-6xl font-normal mb-6">
           Masa Depan Pertanian <br /> Indonesia yang Berkelanjutan!
         </h1>
-        <button className="text-lg bg-custom-green hover:bg-custom-green-dark font-bold py-2.5 px-3.5 rounded-lg inline-flex items-center justify-center">
+        <Button className="text-lg bg-custom-green hover:bg-custom-green-dark font-bold py-2.5 px-3.5 rounded-lg inline-flex items-center justify-center">
           Selengkapnya{""}
           <span className="ml-2">
             <Image src="/arrow.png" alt="Arrow" width={8} height={8} />
           </span>
-        </button>
+        </Button>
       </div>
     </div>
   );

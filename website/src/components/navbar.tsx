@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Link from "next/link";
 import React, { useState, useRef, useEffect } from "react";
 import { usePathname } from "next/navigation";
@@ -52,13 +52,22 @@ const Navbar: React.FC<NavbarProps> = ({ expandNavbar, setExpandNavbar }) => {
 
   return (
     <nav className={navClass}>
-      <Image
-        src="/navbar.png"
-        alt="Logo Navbar"
-        width={292}
-        height={75}
-        className="w-[75px] lg:w-[292px] lg-h-[75px] rounded"
-      />
+      <div className="flex flex-row items-center gap-3">
+        <Image
+          src="/navbar.png"
+          alt="Logo Navbar"
+          width={75}
+          height={75}
+          className="w-[75px] lg:w-[292px] lg-h-[75px] rounded"
+        />
+        <p
+          className={`font-normal text-xl ${
+            isHome ? "text-white" : "text-custom-black"
+          }`}
+        >
+          AutoFarm Innovation
+        </p>
+      </div>
 
       <ul
         className={`text-custom-black font-normal fixed right-0 top-0 z-10 flex h-full w-7/12 flex-col gap-5 lg:gap-10 xl:gap-12 2xl:gap-16 pl-10 sm:pl-20 md:pl-24 max-lg:py-10 font-outfit text-base duration-300 ease-in-out lg:static lg:h-auto lg:flex-1 lg:justify-end lg:translate-x-0 lg:flex-row lg:items-center lg:border-none lg:bg-transparent xl:text-xl ${

@@ -1,4 +1,5 @@
 import Hero from "@/components/hero";
+import LayananKami from "@/components/layanan-kami";
 import React from "react";
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
       // px-24 pt-8 pb-24
     >
       <Hero />
+      <LayananKami />
     </main>
   );
 }
