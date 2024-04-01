@@ -45,7 +45,7 @@ const Navbar: React.FC<NavbarProps> = ({ expandNavbar, setExpandNavbar }) => {
   }, [setExpandNavbar]);
 
   return (
-    <nav className="sticky left-0 right-0 top-0 flex justify-between z-20 w-full bg-white py-6 px-7 lg:px-10 xl:px-16 2xl:px-24 lg:py-6">
+    <nav className="sticky left-0 right-0 top-0 flex justify-between z-30 w-full bg-white py-6 px-7 lg:px-10 xl:px-16 2xl:px-24 lg:py-6">
       <Image
         src="/navbar.png"
         alt="Logo Navbar"
@@ -77,16 +77,18 @@ const Navbar: React.FC<NavbarProps> = ({ expandNavbar, setExpandNavbar }) => {
           } else {
             return (
               <li key={item.name} className="mt-4 lg:mt-0">
-                <Button
-                  className="
+                <Link href="/Daftar">
+                  <Button
+                    className="
                   font-normal z-10 font-outfit text-base duration-300 ease-in-out xl:text-xl 
                   inline-block rounded bg-custom-green px-12 py-0.5 text-white hover:bg-white hover:text-custom-black"
-                  onClick={() => {
-                    console.log("Daftar");
-                  }}
-                >
-                  Daftar
-                </Button>
+                    onClick={() => {
+                      console.log("Daftar");
+                    }}
+                  >
+                    Daftar
+                  </Button>
+                </Link>
               </li>
             );
           }
