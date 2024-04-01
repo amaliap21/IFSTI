@@ -12,7 +12,7 @@ const Hero = () => {
         layout="fill"
         objectFit="cover"
         quality={100}
-        className="absolute z-0"
+        className="absolute z-0 w-full"
       />
 
       {/* Overlay */}

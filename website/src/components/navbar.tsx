@@ -17,9 +17,12 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ expandNavbar, setExpandNavbar }) => {
   const pathname = usePathname();
+  const [navClass, setNavClass] = useState(
+    "sticky left-0 right-0 top-0 flex justify-between items-center z-30 w-full py-6 px-7 lg:px-10 xl:px-16 2xl:px-24"
+  );
   const [isHovered, setIsHovered] = useState<boolean>(false);
-  const blackBgRef = useRef<HTMLDivElement>(null);
 
+  const blackBgRef = useRef<HTMLDivElement>(null);
   const path: PathItem[] = [
     { name: "Status Kebunku", url: "/Status-Kebunku" },
     { name: "Tani Cerdas", url: "/Tani-Cerdas" },
@@ -29,23 +32,26 @@ const Navbar: React.FC<NavbarProps> = ({ expandNavbar, setExpandNavbar }) => {
   ];
 
   useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (
-        blackBgRef.current &&
-        !blackBgRef.current.contains(event.target as Node)
-      ) {
-        setExpandNavbar(false);
-      }
-    }
+    if (pathname) {
+      const isHome = pathname === "/";
+      const isAnyPathItem = path.some((item) => pathname.includes(item.url));
 
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [setExpandNavbar]);
+      let updatedClass =
+        "absolute left-0 right-0 top-0 flex justify-between items-center z-30 w-full py-6 px-7 lg:px-10 xl:px-16 2xl:px-24";
+      if (isHome) {
+        updatedClass += " bg-transparent"; // Home class
+      } else if (isAnyPathItem) {
+        updatedClass += " bg-white lg:py-6"; // Other pages class
+      }
+
+      setNavClass(updatedClass);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pathname]);
+  const isHome = pathname === "/";
 
   return (
-    <nav className="sticky left-0 right-0 top-0 flex justify-between z-30 w-full bg-white py-6 px-7 lg:px-10 xl:px-16 2xl:px-24 lg:py-6">
+    <nav className={navClass}>
       <Image
         src="/navbar.png"
         alt="Logo Navbar"
@@ -60,15 +66,15 @@ const Navbar: React.FC<NavbarProps> = ({ expandNavbar, setExpandNavbar }) => {
         }`}
       >
         {path.map((item) => {
+          const isActive = pathname.toLowerCase() === item.url.toLowerCase();
+          const textColor = isHome ? "text-white" : "text-custom-black";
+          const activeClass = isActive ? "text-custom-green" : textColor;
+
           if (!item.isButton) {
             return (
               <Link key={item.name} href={item.url}>
                 <li
-                  className={`${
-                    pathname.toLowerCase() === item.url.toLowerCase()
-                      ? "text-custom-green"
-                      : "text-custom-black"
-                  } hover:text-custom-green cursor-pointer`}
+                  className={`${activeClass} hover:text-custom-green cursor-pointer`}
                 >
                   {item.name}
                 </li>
