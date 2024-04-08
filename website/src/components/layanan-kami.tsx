@@ -1,7 +1,16 @@
 "use client";
-import React, { useState } from "react";
+import * as React from "react";
 import ServiceCard from "./service-card";
-import Pagination from "./pagination";
+import DotIcon from "./icons/dot-icon";
+
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+  type CarouselApi,
+} from "@/components/ui/carousel";
 
 const services = [
   {
@@ -22,39 +31,94 @@ const services = [
     description:
       "Berbagai produk pertanian seperti pupuk, pestisida dan benih, dan alat pertanian dengan mudah.",
   },
-
-  // ... Add more services as needed
+  {
+    icon: "/belanja.png",
+    title: "Belanja",
+    description:
+      "Berbagai produk pertanian seperti pupuk, pestisida dan benih, dan alat pertanian dengan mudah.",
+  },
+  {
+    icon: "/belanja.png",
+    title: "Belanja",
+    description:
+      "Berbagai produk pertanian seperti pupuk, pestisida dan benih, dan alat pertanian dengan mudah.",
+  },
+  {
+    icon: "/belanja.png",
+    title: "Belanja",
+    description:
+      "Berbagai produk pertanian seperti pupuk, pestisida dan benih, dan alat pertanian dengan mudah.",
+  },
 ];
 
-const itemsPerPage = 3; // Adjust based on how many items you want per page
-
-// export const LayananKami: React.FC = () => {
 const LayananKami = () => {
-  const [currentPage, setCurrentPage] = useState(1);
+  const [api, setApi] = React.useState<CarouselApi>();
+  const [current, setCurrent] = React.useState(0);
+  const [count, setCount] = React.useState(0);
 
-  const indexOfLastItem = currentPage * itemsPerPage;
-  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentServices = services.slice(indexOfFirstItem, indexOfLastItem);
+  React.useEffect(() => {
+    if (!api) {
+      return;
+    }
 
-  const totalPages = Math.ceil(services.length / itemsPerPage);
+    setCount(api.scrollSnapList().length);
+    setCurrent(api.selectedScrollSnap() + 1);
 
-  const handlePageChange = (pageNumber: number) => {
-    setCurrentPage(pageNumber);
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap() + 1);
+    });
+  }, [api]);
+
+  // Dots Icon Handle
+  const itemsPerPage = 2;
+  const currentPage = current - 1;
+
+  const totalPages = Math.ceil(services.length / itemsPerPage + 1);
+
+  const renderDots = () => {
+    return (
+      <div className="flex justify-center space-x-2 mt-4">
+        {Array.from({ length: totalPages }, (_, index) => (
+          <DotIcon
+            key={index}
+            active={index === currentPage}
+            className={`cursor-pointer ${
+              index === currentPage ? "fill-[#000]" : "fill-[#d7d7d7]"
+            }`}
+            size={12}
+          />
+        ))}
+      </div>
+    );
   };
 
   return (
-    <div className="bg-gray-100 p-8">
-      <h2 className="text-2xl font-bold text-center mb-6">Layanan Kami</h2>
-      <div className="flex flex-wrap justify-center gap-16">
-        {currentServices.map((service) => (
-          <ServiceCard key={service.title} {...service} />
-        ))}
-      </div>
-      <Pagination
-        totalPages={totalPages}
-        currentPage={currentPage}
-        onPageChange={handlePageChange}
-      />
+    <div className="bg-gray-100 p-14">
+      <h2 className="text-4xl text-black font-normal text-center mb-6">
+        Layanan Kami
+      </h2>
+
+      <p className="text-center text-lg mb-6 font-light">
+        AutoFarm Innovation menyediakan berbagai fitur dan layanan yang dapat
+        dimanfaatkan oleh para petani
+      </p>
+
+      <Carousel setApi={setApi}>
+        <CarouselContent>
+          {services.map((service, index) => (
+            <CarouselItem
+              key={service.title + index}
+              className="flex-none basis-1/3"
+            >
+              <ServiceCard {...service} />
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext />
+      </Carousel>
+
+      {renderDots()}
     </div>
   );
 };
