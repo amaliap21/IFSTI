@@ -17,11 +17,11 @@ const DotIcon: React.FC<DotIconProps> = ({
     <svg
       height={size}
       width={size}
-      viewBox="0 0 12 12 "
+      viewBox="0 0 8 8 "
       fill={fillColor}
       className={className}
     >
-      <circle cx="5" cy="5" r="5" />
+      <circle cx="10" cy="10" r="20" />
     </svg>
   );
 };

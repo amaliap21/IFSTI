@@ -77,12 +77,12 @@ const LayananKami = () => {
 
   const renderDots = () => {
     return (
-      <div className="flex justify-center space-x-2 mt-4">
+      <div className="flex justify-center space-x-3 mt-2">
         {Array.from({ length: totalPages }, (_, index) => (
           <DotIcon
             key={index}
             active={index === currentPage}
-            className={`cursor-pointer ${
+            className={`cursor-pointer rounded-full ${
               index === currentPage ? "fill-[#000]" : "fill-[#d7d7d7]"
             }`}
             size={12}
@@ -93,7 +93,7 @@ const LayananKami = () => {
   };
 
   return (
-    <div className="bg-gray-100 p-14">
+    <div className="bg-[#FFF] pb-20 pt-14 px-52">
       <h2 className="text-4xl text-black font-normal text-center mb-6">
         Layanan Kami
       </h2>
