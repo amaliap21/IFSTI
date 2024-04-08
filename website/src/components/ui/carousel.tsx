@@ -159,7 +159,7 @@ const CarouselContent = React.forwardRef<
   const { carouselRef, orientation } = useCarousel();
 
   return (
-    <div ref={carouselRef} className="overflow-hidden">
+    <div ref={carouselRef} className="overflow-hidden px-0.5">
       <div
         ref={ref}
         className={cn(
@@ -208,9 +208,9 @@ const CarouselPrevious = React.forwardRef<
       variant={variant}
       size={size}
       className={cn(
-        "absolute h-14 w-14 rounded-full",
+        "absolute h-20 w-20 rounded-full",
         orientation === "horizontal"
-          ? "-left-10 top-2/3 -translate-y-1/2"
+          ? "-left-12 top-1/2 -translate-y-1/2"
           : "-top-12 left-1/2 -translate-x-1/2",
         className
       )}
@@ -243,9 +243,9 @@ const CarouselNext = React.forwardRef<
       variant={variant}
       size={size}
       className={cn(
-        "absolute h-14 w-14 rounded-full",
+        "absolute h-20 w-20 rounded-full",
         orientation === "horizontal"
-          ? "-right-10 top-2/3 -translate-y-1/2"
+          ? "-right-12 top-1/2 -translate-y-1/2"
           : "-bottom-12 left-1/2 -translate-x-1/2",
         className
       )}

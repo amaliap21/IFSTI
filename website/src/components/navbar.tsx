@@ -18,7 +18,7 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = ({ expandNavbar, setExpandNavbar }) => {
   const pathname = usePathname();
   const [navClass, setNavClass] = useState(
-    "sticky left-0 right-0 top-0 flex justify-between items-center z-30 w-full py-6 px-7 lg:px-10 xl:px-16 2xl:px-24"
+    "sticky left-0 right-0 top-0 flex justify-between items-center z-30 w-full py-6 px-7 lg:px-10 xl:px-16 2xl:px-12"
   );
   const [isHovered, setIsHovered] = useState<boolean>(false);
 
@@ -37,7 +37,7 @@ const Navbar: React.FC<NavbarProps> = ({ expandNavbar, setExpandNavbar }) => {
       const isAnyPathItem = path.some((item) => pathname.includes(item.url));
 
       let updatedClass =
-        "absolute left-0 right-0 top-0 flex justify-between items-center z-30 w-full py-6 px-7 lg:px-10 xl:px-16 2xl:px-24";
+        "absolute left-0 right-0 top-0 flex justify-between items-center z-30 w-full py-6 px-7 lg:px-10 xl:px-16 2xl:px-12";
       if (isHome) {
         updatedClass += " bg-transparent"; // Home class
       } else if (isAnyPathItem) {
@@ -52,16 +52,17 @@ const Navbar: React.FC<NavbarProps> = ({ expandNavbar, setExpandNavbar }) => {
 
   return (
     <nav className={navClass}>
-      <div className="flex flex-row items-center gap-3">
+      <div className="flex flex-row items-center gap-4">
         <Image
           src="/navbar.png"
           alt="Logo Navbar"
-          width={75}
-          height={75}
-          className="w-[75px] lg:w-[292px] lg-h-[75px] rounded"
+          width={90}
+          height={90}
+          quality={100}
+          className="w-[100px] lg:w-full lg:h-full rounded"
         />
         <p
-          className={`font-normal text-xl ${
+          className={`font-normal text-3xl ${
             isHome ? "text-white" : "text-custom-black"
           }`}
         >
@@ -70,7 +71,7 @@ const Navbar: React.FC<NavbarProps> = ({ expandNavbar, setExpandNavbar }) => {
       </div>
 
       <ul
-        className={`text-custom-black font-normal fixed right-0 top-0 z-10 flex h-full w-7/12 flex-col gap-5 lg:gap-10 xl:gap-12 2xl:gap-16 pl-10 sm:pl-20 md:pl-24 max-lg:py-10 font-outfit text-base duration-300 ease-in-out lg:static lg:h-auto lg:flex-1 lg:justify-end lg:translate-x-0 lg:flex-row lg:items-center lg:border-none lg:bg-transparent xl:text-xl ${
+        className={`text-custom-black font-normal fixed right-0 top-0 z-10 flex h-full w-7/12 flex-col gap-5 lg:gap-10 xl:gap-12 2xl:gap-20 pl-10 sm:pl-20 md:pl-24 max-lg:py-10 text-base duration-300 ease-in-out lg:static lg:h-auto lg:flex-1 lg:justify-end lg:translate-x-0 lg:flex-row lg:items-center lg:border-none lg:bg-transparent xl:text-2xl ${
           expandNavbar ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -94,12 +95,9 @@ const Navbar: React.FC<NavbarProps> = ({ expandNavbar, setExpandNavbar }) => {
               <li key={item.name} className="mt-4 lg:mt-0">
                 <Link href="/Daftar">
                   <Button
-                    className="
-                  font-normal z-10 font-outfit text-base duration-300 ease-in-out xl:text-xl 
-                  inline-block rounded bg-custom-green px-12 py-0.5 text-white hover:bg-white hover:text-custom-black"
-                    onClick={() => {
-                      console.log("Daftar");
-                    }}
+                    className=" drop-shadow-md
+                  font-normal z-10 text-base duration-300 ease-in-out xl:text-2xl 
+                  rounded bg-custom-green px-12 py-6 text-white hover:bg-white hover:text-custom-black"
                   >
                     Daftar
                   </Button>
