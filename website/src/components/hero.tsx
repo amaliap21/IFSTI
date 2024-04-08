@@ -20,7 +20,7 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-20 flex flex-col items-start justify-center h-screen text-white px-4 md:px-0 ml-40 gap-16  ">
-        <h1 className="text-6xl md:text-7xl font-normal mb-6 leading-loose">
+        <h1 className="text-6xl md:text-6xl font-normal mb-6 leading-loose">
           Masa Depan Pertanian <br /> Indonesia yang Berkelanjutan!
         </h1>
         <Button className="text-2xl bg-custom-green hover:bg-custom-green-dark font-normal py-7 px-5 rounded-lg inline-flex items-center justify-center">
