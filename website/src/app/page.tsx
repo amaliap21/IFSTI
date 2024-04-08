@@ -31,7 +31,7 @@ const images = [
     alt: "Daun 4",
     width: 185,
     height: 161,
-    classname: "bottom-[1200px] right-[0px]",
+    classname: "bottom-[1175px] right-[0px]",
   },
   {
     src: "/daun-5.png",
