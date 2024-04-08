@@ -10,28 +10,28 @@ const images = [
     alt: "Daun 1",
     width: 185,
     height: 161,
-    classname: "top-[235px] right-[290px]",
+    classname: "top-[235px] right-[250px]",
   },
   {
     src: "/daun-2.png",
     alt: "Daun 2",
     width: 288,
     height: 201,
-    classname: "top-[480px] right-[0px]",
+    classname: "top-[400px] right-[0px]",
   },
   {
     src: "/daun-3.png",
     alt: "Daun 3",
     width: 185,
     height: 161,
-    classname: "top-[730px] left-[0px]",
+    classname: "top-[650px] left-[0px]",
   },
   {
     src: "/daun-4.png",
     alt: "Daun 4",
     width: 185,
     height: 161,
-    classname: "top-[1420px] right-[0px]",
+    classname: "bottom-[1100px] right-[0px]",
   },
   {
     src: "/daun-5.png",
@@ -64,3 +64,12 @@ export default function Home() {
     </main>
   );
 }
+
+export const metadata = {
+  title: "AutoFarm Innovation",
+  description:
+    "AutoFarm Innovation adalah platform yang memudahkan petani dalam mengelola pertanian secara efisien dan berkelanjutan",
+  generator: "Next.js",
+  applicationName: "AutoFarm Innovation",
+  colorScheme: "dark",
+};

@@ -62,7 +62,7 @@ const Navbar: React.FC<NavbarProps> = ({ expandNavbar, setExpandNavbar }) => {
           className="w-[100px] lg:w-full lg:h-full rounded"
         />
         <p
-          className={`font-normal text-3xl ${
+          className={`font-normal text-2xl ${
             isHome ? "text-white" : "text-custom-black"
           }`}
         >
@@ -71,7 +71,7 @@ const Navbar: React.FC<NavbarProps> = ({ expandNavbar, setExpandNavbar }) => {
       </div>
 
       <ul
-        className={`text-custom-black font-normal fixed right-0 top-0 z-10 flex h-full w-7/12 flex-col gap-5 lg:gap-10 xl:gap-12 2xl:gap-20 pl-10 sm:pl-20 md:pl-24 max-lg:py-10 text-base duration-300 ease-in-out lg:static lg:h-auto lg:flex-1 lg:justify-end lg:translate-x-0 lg:flex-row lg:items-center lg:border-none lg:bg-transparent xl:text-2xl ${
+        className={`text-custom-black font-normal fixed right-0 top-0 z-10 flex h-full w-7/12 flex-col gap-5 lg:gap-10 xl:gap-12 2xl:gap-20 pl-10 sm:pl-20 md:pl-24 max-lg:py-10 text-base duration-300 ease-in-out lg:static lg:h-auto lg:flex-1 lg:justify-end lg:translate-x-0 lg:flex-row lg:items-center lg:border-none lg:bg-transparent xl:text-xl ${
           expandNavbar ? "translate-x-0" : "translate-x-full"
         }`}
       >

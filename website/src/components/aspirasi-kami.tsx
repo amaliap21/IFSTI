@@ -38,7 +38,7 @@ const LayananKami: React.FC = () => {
       <h2 className="text-6xl font-normal text-center mb-24">{title}</h2>
 
       <div className="flex flex-wrap lg:flex-nowrap gap-14">
-        <p className="mb-8 text-2xl">{description}</p>
+        <p className="mb-8 text-xl">{description}</p>
         <Image
           src="/peta.png"
           alt="Map"
