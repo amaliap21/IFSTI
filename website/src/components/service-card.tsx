@@ -13,7 +13,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   description,
 }) => {
   return (
-    <div className="pl-8 pr-12 pb-8 pt-12 drop-shadow-lg rounded-lg bg-white relative mt-14 mx-1">
+    <div className="pl-8 pr-10 pb-8 pt-12 drop-shadow-lg rounded-lg bg-white relative mt-14 mx-1">
       <Image
         src={icon}
         alt={title}
