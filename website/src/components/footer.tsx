@@ -1,5 +1,5 @@
 // Footer.tsx
-import Image from "next/image";
+import Image from "next/legacy/image";
 import React from "react";
 
 interface Contact {
@@ -29,24 +29,24 @@ const Footer = () => {
       {/* Content */}
       <div className="flex flex-col px-20">
         {/* Atas */}
-        <div className="lg:pr-5 pt-8 pb-6 md:pt-12 flex flex-col justify-center items-center gap-8 lg:flex-row lg:justify-between lg:items-start lg:gap-0">
+        <div className="lg:pr-5 pt-8 md:pt-16 flex flex-col justify-center items-center gap-8 lg:flex-row lg:justify-between lg:items-center lg:gap-0">
           {/* Sisi Kiri */}
           <div className="flex flex-col items-center mb-4 md:mb-0 gap-4">
             <Image
               src="/footer.png"
               alt="Logo Footer"
-              width={140}
-              height={140}
+              width={150}
+              height={150}
             />
-            <p className="font-semibold text-3xl">AutoFarm Innovation</p>
+            <p className="font-semibold text-4xl">AutoFarm Innovation</p>
           </div>
 
           {/* Sisi Kanan */}
           <div className="flex flex-row justify-start gap-36">
             {/* Layanan Kami */}
             <div className="flex flex-col items-start gap-4">
-              <h3 className="font-semibold text-3xl">Layanan Kami</h3>
-              <ul className="flex flex-col gap-4">
+              <h3 className="font-semibold text-4xl">Layanan Kami</h3>
+              <ul className="flex flex-col gap-4 text-2xl">
                 {services.map((service) => (
                   <li key={service}>{service}</li>
                 ))}
@@ -55,8 +55,8 @@ const Footer = () => {
 
             {/* Narahubung */}
             <div className="flex flex-col items-start gap-4">
-              <h3 className="font-semibold text-3xl">Narahubung</h3>
-              <ul className="flex flex-col gap-3">
+              <h3 className="font-semibold text-4xl">Narahubung</h3>
+              <ul className="flex flex-col gap-3  text-2xl">
                 {" "}
                 {/* Adjust gap as needed */}
                 {contacts.map((contact) => (
@@ -78,7 +78,7 @@ const Footer = () => {
           <div className="w-full h-[3px] bg-white mb-4" />
         </div>
 
-        <p className="text-center font-medium text-xl pb-10 mt-2">
+        <p className="text-center font-medium text-2xl pb-10 mt-2">
           Design and Developed by IFSTI Team
         </p>
       </div>
