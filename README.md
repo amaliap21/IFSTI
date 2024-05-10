@@ -6,6 +6,7 @@ Nama Tim : IFSTI
 Video : https://drive.google.com/file/d/1ZvaVaVleUcoKp7YVv4v6Gzpxm1sJ1OQO/view?usp=sharing 
 
 Website : https://ifsti.vercel.app/
+
 Nama Anggota : 
 1. Amalia Putri - Hacker 
 2. Willhelmina Rachel - Hipster 
