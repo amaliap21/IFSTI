@@ -2,7 +2,9 @@
 Hackathon FINDIT 2024
 
 Nama Tim : IFSTI 
-Video : https://drive.google.com/file/d/1ZvaVaVleUcoKp7YVv4v6Gzpxm1sJ1OQO/view?usp=sharing
+
+Video : https://drive.google.com/file/d/1ZvaVaVleUcoKp7YVv4v6Gzpxm1sJ1OQO/view?usp=sharing 
+
 Website : https://ifsti.vercel.app/
 Nama Anggota : 
 1. Amalia Putri - Hacker 
@@ -20,6 +22,6 @@ Monitoring pertanian merupakan sebuah fitur untuk memberikan kemudahan pada peta
 Seluruh Solusi diatas membutuhkan pembimbingan dan edukasi terhadap petani, sehingga diberikan solusi edukasi yang disusun dengan metode kerja sama dengan EduFarm untuk memberikan pembimbingan mentoring dengan kelompok tani per dusun melalui media online dan offline, terkhusus offline harus upgrade premium sesuai kelompok tani. 
 
 Notes : 
-Kami menggunakan tensorflow model untuk Computer Vision sehingga file yang dibutuhkan > 100 MB dan GitHub memiliki batasan 100 MB sehingga kami menaruh ke dalam drive untul file modelnya, berikut link drive-nya : 
+Kami menggunakan tensorflow model untuk Computer Vision sehingga file yang dibutuhkan > 100 MB dan GitHub memiliki batasan 100 MB sehingga kami menaruh ke dalam drive untul file modelnya, berikut link drive-nya 
 
 https://drive.google.com/file/d/1jMXKpGj6NKAo4veIfV6zbsMDcb2ew0VQ/view?usp=sharing
